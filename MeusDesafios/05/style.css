@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100vh;
+}
+
+body {
+  background-image: linear-gradient(to right, #0000FF -150%, #0000b3, #009186 60%);
+  font-family: Roboto, Arial, sans-serif;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 32px;
+  letter-spacing: 1px;
+  margin: 20px 0;
+  color: white;
+}
+
+form {
+  margin: 20px 0;
+  background-color: white;
+  padding: 30px 25px;
+  border-radius: 5px;
+}
+
+form .input-block {
+  margin-bottom: 20px;
+}
+
+form .input-block label {
+  font-size: 14px;
+  color: #009186;
+}
+
+form .input-block input {
+  width: 100%;
+  display: block;
+  margin-top: 8px;
+  padding: 7px;
+  font-size: 16px;
+  color: 009186;
+  border-radius: 2px;
+  border: 1px solid #ccddef;
+  outline-color: #009186;
+}
+
+form .btn-login {
+  display: block;
+  min-width: 120px;
+  border: none;
+  background-color: #009186;
+  color: white;
+  border-radius: 25px;
+  margin: auto;
+  padding: 7px;
+}
+
+/*Desafio 04*/
+
+form {
+  /*esconde a animacao fora do form*/
+  overflow: hidden;
+  animation: fade 0.2s;
+}
+
+form .input-block:nth-child(1) {
+  /*Chamando o evento de animação*/
+  animation-name: move;
+  /*Tempo de animação*/
+  animation-duration: 0.5s;
+}
+
+form .input-block:nth-child(2) {
+  /*Chamando o evento de animação*/
+  animation-name: move;
+  /*Tempo de animação*/
+  animation-duration: 0.4s;
+  /*Demora um pouco paara ser visto*/
+  animation-delay: 0.10s;
+  /*Espera um evento acabar para ele iniciar*/
+  animation-fill-mode: backwards;
+}
+
+form .btn-login {
+  /*Chamando o evento de animação*/
+  animation-name: move;
+  /*Tempo de animação*/
+  animation-duration: 0.4s;
+  /*Demora um pouco paara ser visto*/
+  animation-delay: 0.25s;
+  /*Espera um evento acabar para ele iniciar*/
+  animation-fill-mode: backwards;
+}
+
+/*Keyframes tem um tempo de inicio(from) e tempo e saida(to), ele auxilia nas animacoes*/
+
+@keyframes move {
+  from {
+    /* suaviza a entrada do elemento*/
+    opacity: 0;
+    /*Movimenta do eixo x*/
+    transform: translateX(-35%);
+  }
+  to {
+    /*suaviza o tamnhop total do elemento */
+    opacity: 1;
+    /*movimenta ate chegar a posição 0*/
+    transform: translateX(0%);
+  }
+}
+
+@keyframes fade {
+  from {
+    /* O modo de sombra em que a animação vai iniciar*/
+    opacity: 0;
+    /*Tamanho em que a animação vai durar*/
+    transform: scale(0.9);
+  }
+  to {
+    /* O modo de sombra em que a animação vai ficar */
+    opacity: 1;
+    /*Tamanho em que a animação vai ficar no final da animação*/
+    transform: scale(1);
+  }
+}
+
+/*Desafio 03*/
+
+/*Quando clicar no botao sumir o Form na tela */
+
+.form-hide {
+  animation-name: down;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+  /* O modo como a animação e o timimng se movientam*/
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1)
+}
+
+@keyframes down {
+  from {
+    /*Translada de cima para baixo*/
+    transform: translateY(0);
+  }
+  to {
+    /*Translada de cima para baixo*/
+    transform: translateY(100vh);
+  }
+}
